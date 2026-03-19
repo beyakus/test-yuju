@@ -1,0 +1,100 @@
+<section>
+  <table
+    mat-table
+    [dataSource]="dataTable()"
+    class="mat-elevation-z8 table-product-container"
+  >
+    <ng-container matColumnDef="thumbnail">
+      <th mat-header-cell *matHeaderCellDef class="thead">Thumbnail</th>
+      <td mat-cell *matCellDef="let element">
+        <img
+          class="thumbnail"
+          [src]="element.thumbnail"
+          [alt]="element.description"
+        />
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="title">
+      <th mat-header-cell *matHeaderCellDef class="thead">Product</th>
+      <td mat-cell *matCellDef="let element">
+        <span class="title-product description-product">{{element.title}}</span>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="sku">
+      <th mat-header-cell *matHeaderCellDef class="thead">SKU</th>
+      <td mat-cell *matCellDef="let element">
+        <span class="title-product">{{element.sku}}</span>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="brand">
+      <th mat-header-cell *matHeaderCellDef class="thead">Brand</th>
+      <td mat-cell *matCellDef="let element">
+        <span class="title-product">{{element.brand}}</span>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="category">
+      <th mat-header-cell *matHeaderCellDef class="thead">Category</th>
+      <td mat-cell *matCellDef="let element">
+        <ButtonStatus>
+          <span class="title-product">{{element.category}}</span>
+        </ButtonStatus>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="price">
+      <th mat-header-cell *matHeaderCellDef class="thead">Price</th>
+      <td mat-cell *matCellDef="let element">
+        <span class="title-product">{{element.price | currency}}</span>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="discountPercentage">
+      <th mat-header-cell *matHeaderCellDef class="thead">Discount</th>
+      <td mat-cell *matCellDef="let element">
+        <ButtonStatus [variant]="variant.ORANGE">
+          <span class="title-product"
+            >{{element.discountPercentage | percent}} off</span
+          >
+        </ButtonStatus>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="stock">
+      <th mat-header-cell *matHeaderCellDef class="thead">Stock</th>
+      <td mat-cell *matCellDef="let element">
+        <span class="title-product">{{element.stock}}</span>
+      </td>
+    </ng-container>
+
+    <ng-container matColumnDef="status">
+      <th mat-header-cell *matHeaderCellDef class="thead">Status</th>
+      <td mat-cell *matCellDef="let element">
+        <ButtonStatus
+          [variant]="element.availabilityStatus === status.IN_STOCK? 
+          variant.GREEN: 
+          element.availabilityStatus === status.IN_STOCK ? 
+          variant.ORANGE:
+          variant.RED"
+        >
+          <span class="title-product">{{element.availabilityStatus}}</span>
+        </ButtonStatus>
+      </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  </table>
+
+  <mat-paginator
+    [length]="totals()"
+    [pageSize]="pageSize()"
+    [pageSizeOptions]="[5, 10, 25, 100]"
+    (page)="handlePage($event)"
+    aria-label="Select page"
+  >
+  </mat-paginator>
+</section>

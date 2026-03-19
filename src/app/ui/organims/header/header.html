@@ -1,0 +1,10 @@
+<mat-toolbar>
+  <nav class="nav-container">
+    <YujuInput
+      [placeholder]="'Search products'"
+      (onSearchValue)="onSearch.emit($event)"
+    />
+    <Categories (onSelectCategories)="onSelectCategorie.emit($event)" />
+    <Sort />
+  </nav>
+</mat-toolbar>

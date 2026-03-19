@@ -1,59 +1,162 @@
-# YujuApp
+# 🚀 Yuju App
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 21.2.0.
+![Yuju Logo](https://yuju.io/assets/images/logo/logo.svg)
 
-## Development server
+Aplicación desarrollada con **Angular 21**, siguiendo buenas prácticas de arquitectura y organización de componentes mediante el **patrón atómico (Atomic Design)**.
 
-To start a local development server, run:
+---
+
+## 📌 Tecnologías utilizadas
+
+- **Angular**: 21.2.x
+- **Angular Material**: 21.2.x
+- **Angular CDK**: 21.2.x
+- **RxJS**: 7.8.x
+- **TypeScript**: 5.9.x
+- **Vite/Vitest** (testing moderno)
+- **Prettier** (formateo de código)
+
+---
+
+## 🧱 Arquitectura
+
+Este proyecto implementa el enfoque de **Atomic Design**, organizando la UI en:
+
+- **Átomos** → Componentes básicos (botones, inputs, labels)
+- **Moléculas** → Combinación de átomos (formularios simples, cards)
+- **Organismos** → Secciones completas (headers, layouts, tablas)
+- **Templates** → Estructura de páginas
+- **Pages** → Vistas completas
+
+Esto permite:
+
+- Reutilización de componentes
+- Escalabilidad
+- Mantenimiento más sencillo
+
+---
+
+## ⚙️ Instalación
+
+1. Clonar el repositorio:
+
+```bash
+git clone https://github.com/beyakus/test-yuju.git
+cd yuju-app
+```
+
+2. Instalar dependencias:
+
+```bash
+npm install
+```
+
+---
+
+## ▶️ Levantar el proyecto (modo desarrollo)
+
+```bash
+npm start
+```
+
+o
 
 ```bash
 ng serve
 ```
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+El proyecto estará disponible en:
 
-## Code scaffolding
-
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
-
-```bash
-ng generate component component-name
+```
+http://localhost:4200
 ```
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+---
+
+## 🏗️ Compilar el proyecto
+
+Para generar la build de producción:
 
 ```bash
-ng generate --help
+npm run build
 ```
 
-## Building
+Esto generará los archivos optimizados en la carpeta:
 
-To build the project run:
+```
+/dist
+```
+
+---
+
+## 👀 Modo desarrollo con watch
 
 ```bash
-ng build
+npm run watch
 ```
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+Compila automáticamente al detectar cambios.
 
-## Running unit tests
+---
 
-To execute unit tests with the [Vitest](https://vitest.dev/) test runner, use the following command:
+## 🧪 Ejecutar pruebas
 
 ```bash
-ng test
+npm run test
 ```
 
-## Running end-to-end tests
+Se utiliza **Vitest** como framework de testing.
 
-For end-to-end (e2e) testing, run:
+---
 
-```bash
-ng e2e
-```
+## 📦 Scripts disponibles
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+| Script          | Descripción                       |
+| --------------- | --------------------------------- |
+| `npm start`     | Levanta el servidor de desarrollo |
+| `npm run build` | Compila la aplicación             |
+| `npm run watch` | Compilación en modo observador    |
+| `npm run test`  | Ejecuta pruebas                   |
 
-## Additional Resources
+---
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+## 📁 Dependencias principales
+
+### Dependencias
+
+- `@angular/core`
+- `@angular/common`
+- `@angular/forms`
+- `@angular/router`
+- `@angular/material`
+- `@angular/cdk`
+- `rxjs`
+
+### DevDependencies
+
+- `@angular/cli`
+- `@angular/compiler-cli`
+- `typescript`
+- `vitest`
+- `prettier`
+
+---
+
+## 🧑‍💻 Requisitos
+
+- Node.js (recomendado >= 18)
+- npm 10.8.2
+
+---
+
+## 📌 Notas
+
+- Proyecto configurado con Angular CLI
+- Uso de buenas prácticas de modularización
+- Preparado para escalabilidad y mantenimiento
+
+---
+
+## 📄 Licencia
+
+Este proyecto es privado.

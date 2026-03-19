@@ -1,0 +1,18 @@
+@import "../../../../assets/scss/variables.scss";
+
+.table-product-container {
+  .thumbnail {
+    width: 3.125rem;
+  }
+  .title-product {
+    font-weight: 500;
+  }
+  .description-product {
+    text-decoration: underline;
+    color: $secondary;
+  }
+  .thead {
+    background-color: $secondary;
+    color: $white;
+  }
+}

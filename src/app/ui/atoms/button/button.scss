@@ -1,0 +1,20 @@
+@import "../../../../assets//scss/variables.scss";
+
+.button-container {
+  display: inline-block;
+  padding: 0.3125rem;
+  background-color: $secondary;
+  color: $blue-100;
+  border-radius: 0.3125rem;
+  &[variant="orange"] {
+    background-color: $orange-100;
+  }
+  &[variant="red"] {
+    color: $white;
+    background-color: $red-100;
+  }
+  &[variant="green"] {
+    color: $white;
+    background-color: $blue-100;
+  }
+}

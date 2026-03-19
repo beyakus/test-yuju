@@ -1,0 +1,11 @@
+<section>
+  <Toolbar
+    (onSearch)="handleSearch($event)"
+    (onSelectCategorie)="handleSearch($event)"
+  />
+  <ProductTable
+    [dataTable]="dataProducts()"
+    [totals]="totalsProduct()"
+    (onChangeSizePage)="handlePaginate($event)"
+  />
+</section>

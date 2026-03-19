@@ -1,0 +1,8 @@
+<section>
+  <select class="select-element" (change)="handleSelectCategorie($event)">
+    <option value="">All Categories</option>
+    @for (item of listCategories(); track $index) {
+    <option [value]="item.slug">{{item.name}}</option>
+    }
+  </select>
+</section>
